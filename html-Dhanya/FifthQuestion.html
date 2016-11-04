@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="CSS/thirdQuestion.css">
+</head>
+<body>
+<div class="innerBox">
+    <div class="innerBoxHeader">
+        <p class="headerText"><b>Question 5</b></p>
+    </div>
+
+    <div class="innerBoxBody">
+        <div class="questionBox">
+            <div class="leftBox">
+                <p>How did you like the center?</p>
+                <textarea rows="12" cols="50" ></textarea>
+            </div>
+        </div>
+        <div class="fourthOptionsBox">
+            <p> Select Center Location</p>
+            <div class="centralOptionBox" id="centralOptionBox" style="display: inline-block">
+                <label>City:
+                    <select id="areaSelect" name="areaSelect">
+                        <option>San Jose</option>
+                        <option>Mountain View</option>
+                        <option>Palo Alto</option>
+                        <option>San Fransisco</option>
+                    </select>
+                </label>
+                <label>Room Number:
+                    <select id="roomSelect" name="areaSelect">
+                        <option>Room 337</option>
+                        <option>Room 200</option>
+                        <option>Room 110</option>
+                        <option>Room 410</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="innerBoxFooter">
+        <form name="wholeForm" action="scoreSummary.html">
+            <button class="secondPageButton" type="submit" value="Submit" name="form-submit" onclick='getScore()'>Submit & next Question</button>
+            <button class="secondPageButton" type="reset" value="Reset" onclick="getScore()">Skip & Get Score</button>
+            <input type="hidden" value=" " id="score" name="hiddenScore"/>
+            <input type="hidden" value=" " id="videoScore" name="hiddenVideoScore" />
+            <input type="hidden" value=" " id="engScore" name="hiddenEngScore" />
+        </form>
+    </div>
+</div>
+<script>
+    var counter;
+    var engCounter;
+    var videoCounter = 0;
+    function getScore() {
+
+        //previous score
+        counter = getURLParameter('hiddenScore');
+        engCounter = getURLParameter('hiddenEngScore');
+        videoCounter = getURLParameter('hiddenVideoScore');
+
+        document.getElementById('score').value = counter;
+        document.getElementById('engScore').value = engCounter;
+        document.getElementById('videoScore').value = videoCounter;
+        document.wholeForm.submit();
+    }
+    function getURLParameter(paramName) {
+        var urlString = window.location.search.substring(1);
+        var urlVarList =urlString.split('&');
+        for(var i=0;i< urlVarList.length; i++) {
+            var paramSet = urlVarList[i].split('=');
+            if(paramSet[0] ==paramName) {
+                return paramSet[1];
+            }
+        }
+    }
+</script>
+</body>
+</html>

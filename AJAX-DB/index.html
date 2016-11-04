@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylesheets/style_registration.css" type="text/css">
+</head>
+<body>
+<div id="container">
+    <h1>Registration</h1>
+    <form action ="javascipt:void(0);" id="registrationForm" method="post">
+        <ul>
+            <li>
+                <label for="username">User ID:</label>
+                <span><input id="username" name="username" type="text" required="required"/></span>
+            </li>
+
+            <li>
+                <label for="pwd">Password:</label>
+                <span><input id="pwd" name="pwd" type="password" required="required"/></span>
+            </li>
+            <li>
+                <label for="password_confirm">Confirm Password:</label>
+                <span><input id="password_confirm" name="password_confirm" type="password" required="required" onkeyup="checkPwd(); return false;"/></span>
+                <span id="pwd_message" class="pwd_message"></span>
+                <progress id='pwd_prog' value="0" max='100'><span>0</span>%</progress>
+            </li>
+
+
+
+
+            <li>
+                <label for="e_mail">Email Address:</label>
+                <span><input id="e_mail" name="e_mail" type="email" required="required"/></span>
+            </li>
+            <li>
+                <label for="email_confirm">Verify Email Address:</label>
+                <span><input id="email_confirm" name="email_confirm" type="email" required="required" onkeyup="checkEmail(); return false;"/></span>
+                <span id="email_message" class="email_message"></span>
+            </li>
+            <li>
+                <label for="security_list">Secuirty Question:</label>
+                        <span><input list="security_list" name="security_qs"  id="sec_list1"  required="required"/>
+                                <datalist id="security_list">
+                                    <option value="Sum of 2 + 3 =">
+                                    <option value="Sum of 100 + 200 =">
+                                    <option value="23 * 100 =">
+                                    <option value="Capital of India?">
+                                    <option value="Capital of USA?">
+                                </datalist>
+                        </span>
+            </li>
+            <li>
+                <label for="answer">Security Answer:</label>
+                <span><input id="answer" name="answer" type="text" required="required"/></span>
+            </li>
+            <li>
+                <label for="security_list_confirm">Secuirty Question:</label>
+                        <span><input list="security_list_confirm" name="security_qs_confirm" id= "sec_list2" required="required"/>
+                                <datalist id="security_list_confirm">
+                                    <option value="Sum of 2 + 3 =">
+                                    <option value="Sum of 100 + 200 =">
+                                    <option value="23 * 100 =">
+                                    <option value="Capital of India?">
+                                    <option value="Capital of USA?">
+                                </datalist>
+                        </span>
+            </li>
+            <li>
+                <label for="answer_confirm">Security Answer:</label>
+                <span><input id="answer_confirm" name="answer_confirm" type="text" required="required"/></span>
+            </li>
+            <li>
+                <label for="mobile">Mobile:</label>
+                <span><input id="mobile" name="mobile" type="tel" pattern='[\+]\d{2}[\(]\d{3}[\)]\d{3}[\-]\d{4}'  required="required" placeholder ="+XX(XXX)XXX-XXXX"/></span>
+            </li>
+            <li>
+                <label for="address">Address:</label>
+                <span><textarea rows="5" cols="50" id="address" name="address" type="number" required="required"></textarea></span>
+            </li>
+            <li>
+                <label for="interests">Other Areas interested in:</label>
+                <span><textarea rows="5" cols="50" id="interests" name="interests" type="text"></textarea></span>
+            </li>
+            <li>
+                <button type="submit">Register</button>
+            </li>
+        </ul>
+    </form>
+
+    <!--   Password rules and requirements         -->
+    <div id="pwd_info">
+        <h5> Password must meet the following requirements</h5>
+        <ul>
+            <li id="alpha" class="invalid">At least <strong>4 Alphabets</strong> needed </li>
+            <li id="number" class="invalid">At least <strong>1 numerical character</strong> needed </li>
+            <li id="special" class="invalid">At least <strong>1 special character</strong> needed</li>
+            <li id="no_space" class="valid">Cannot contain <strong>space</strong></li>
+            <li id="no_username" class="valid">Cannot be the same as <strong>username</strong></li>
+            <li id="length" class="invalid">At least 8 characters needed</li>
+        </ul>
+    </div>
+</div>
+</body>
+<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<script src="javascipt/script_registration.js"></script>
+</html>

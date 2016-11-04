@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 2</title>
+    <link rel="stylesheet" href="CSS/firstQuestion.css">
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+<body>
+<div class="pageContainer">
+    <div class="pageHeader">
+        <p class="headerText"><b>Question 2</b></p>
+    </div>
+    <div class="questionContainer">
+        <p>Select the cosine theorem formula
+        </p>
+    </div>
+    <div class="answerOptionsContainer">
+        <div class="answerContainer">
+            <form name="ansForm" action= "thirdQuestion.html">
+            <span class="optionAInput">
+            <input type="radio" name="options" value="A" >
+                <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'>
+                    <mrow>
+                        <mi>cos</mi>
+                        <mo>&ApplyFunction;</mo>
+                        <mo>(</mo>
+                        <mo>&alpha;</mo>
+                        <mo>&plusmn;</mo>
+                        <mo>&beta;</mo>
+                        <mo>)</mo>
+                        <mo>=</mo>
+                        <mrow>
+                            <mi>cos</mi>
+                            <mo>&ApplyFunction;</mo>
+                            <mo>&alpha;</mo>
+                            <mi>cos</mi>
+                            <mo>&ApplyFunction;</mo>
+                            <mo>&beta;</mo>
+                            <mo>&plusmn;</mo>
+                            <mi>sin</mi>
+                            <mo>&ApplyFunction;</mo>
+                            <mo>&alpha;</mo>
+                            <mi>sin</mi>
+                            <mo>&ApplyFunction;</mo>
+                            <mo>&beta;</mo>
+                        </mrow>
+                    </mrow>
+                </math>
+            </span>
+                <input type="radio" name="options" value="B" class="secondOptionBInput">
+                <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'>
+                    <mrow>
+                        <mi>sin</mi>
+                        <mo>&ApplyFunction;</mo>
+                        <mo>(</mo>
+                        <mo>&alpha;</mo>
+                        <mo>&plusmn;</mo>
+                        <mo>&beta;</mo>
+                        <mo>)</mo>
+                        <mo>=</mo>
+                        <mrow>
+                            <mi>sin</mi>
+                            <mo>&ApplyFunction;</mo>
+                            <mo>&alpha;</mo>
+                            <mi>cos</mi>
+                            <mo>&ApplyFunction;</mo>
+                            <mo>&beta;</mo>
+                            <mo>&plusmn;</mo>
+                            <mi>cos</mi>
+                            <mo>&ApplyFunction;</mo>
+                            <mo>&alpha;</mo>
+                            <mi>sin</mi>
+                            <mo>&ApplyFunction;</mo>
+                            <mo>&beta;</mo>
+                        </mrow>
+                    </mrow>
+                </math>
+
+                <div class="answerOptionsSecondContainer">
+                    <span class="optionAInput">
+                    <input type="radio" name="options" value="C">
+                        <math xmlns='http://www.w3.org/1998/Math/MathML' display="inline">
+                            <mrow>
+                                <mi>sin</mi>
+                                <mo>&ApplyFunction;</mo>
+                                <mo>&alpha;</mo>
+                                <mo>+</mo>
+                                <mi>sin</mi>
+                                <mo>&ApplyFunction;</mo>
+                                <mo>&beta;</mo>
+                                <mo>=</mo>
+                            </mrow>
+                            <mrow>
+                                <mn>2</mn>
+                                <mi>sin</mi>
+                                <mo>&ApplyFunction;</mo>
+                                <mo>(</mo>
+                                <mfrac>
+                                    <mrow>
+                                        <mo>&alpha;</mo>
+                                        <mo>+</mo>
+                                        <mo>&beta;</mo>
+                                    </mrow>
+                                    <mrow>
+                                       <mn>2</mn>
+                                    </mrow>
+                                </mfrac>
+                                <mo>)</mo>
+                                <mi>cos</mi>
+                                <mo>&ApplyFunction;</mo>
+                                <mo>(</mo>
+                                <mfrac>
+                                    <mrow>
+                                        <mo>&alpha;</mo>
+                                        <mo>-</mo>
+                                        <mo>&beta;</mo>
+                                    </mrow>
+                                    <mrow>
+                                       <mn>2</mn>
+                                    </mrow>
+                                </mfrac>
+                                <mo>)</mo>
+                            </mrow>
+                        </math>
+                    </span>
+                        <input type="radio" name="options" value="D" class="secondOptionDInput">
+                        <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'>
+                            <mrow>
+                                <mi>sin</mi>
+                                <mo>&ApplyFunction;</mo>
+                                <mo>&alpha;</mo>
+                                <mo>-</mo>
+                                <mi>sin</mi>
+                                <mo>&ApplyFunction;</mo>
+                                <mo>&beta;</mo>
+                                <mo>=</mo>
+                            </mrow>
+                            <mrow>
+                                <mn>2</mn>
+                                <mi>cos</mi>
+                                <mo>&ApplyFunction;</mo>
+                                <mo>(</mo>
+                                <mfrac>
+                                    <mrow>
+                                        <mo>&alpha;</mo>
+                                        <mo>+</mo>
+                                        <mo>&beta;</mo>
+                                    </mrow>
+                                    <mrow>
+                                        <mn>2</mn>
+                                    </mrow>
+                                </mfrac>
+                                <mo>)</mo>
+                                <mi>sin</mi>
+                                <mo>&ApplyFunction;</mo>
+                                <mo>(</mo>
+                                <mfrac>
+                                    <mrow>
+                                        <mo>&alpha;</mo>
+                                        <mo>-</mo>
+                                        <mo>&beta;</mo>
+                                    </mrow>
+                                    <mrow>
+                                        <mn>2</mn>
+                                    </mrow>
+                                </mfrac>
+                                <mo>)</mo>
+                            </mrow>
+                        </math>
+                </div>
+                <input type="hidden" value="" id="score" name="hiddenScore"/>
+            </form>
+        </div>
+    </div> <!-- ans container -->
+    <div class="firstFooter">
+
+        <button class="secondPageButton" type="submit" value="Submit" name="form-submit" onclick='checkAns()'>Submit & next Question</button>
+        <button class="secondPageButton" type="reset" value="Reset" onclick="clearInput()">Cancel & Clear Selection</button>
+    </div>
+    <script>
+        var counter;
+        function checkAns(){
+
+            //get the previous score
+            counter = getURLParameter('hiddenScore');
+            //get the current score
+            var score = document.querySelector('input[name="options"]:checked').value;
+            if(score == 'A') {
+                counter++;
+            }
+            document.getElementById('score').value = counter;
+            document.ansForm.submit();
+
+        }
+        function getURLParameter(paramName) {
+            var urlString = window.location.search.substring(1);
+            var urlVarList =urlString.split('&');
+            for(var i=0;i< urlVarList.length; i++) {
+                var paramSet = urlVarList[i].split('=');
+                if(paramSet[0] ==paramName) {
+                    return paramSet[1];
+                }
+            }
+        }
+        function clearInput() {
+            var radioInputs = document.getElementsByName("options");
+            for(var i=0;i<radioInputs.length;i++)
+                radioInputs[i].checked = false;
+        }
+    </script>
+
+</div>
+</body>
+</html>

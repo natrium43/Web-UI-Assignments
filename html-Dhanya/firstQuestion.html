@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 1</title>
+    <link rel="stylesheet" href="CSS/firstQuestion.css">
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+<body>
+<div class="pageContainer">
+    <div class="pageHeader">
+        <p class="headerText"><b>Question 1</b></p>
+    </div>
+    <div class="questionContainer">
+        <p>Given points
+            <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'>
+                <mo>(</mo>
+                <mi>x</mi>
+                <mn>1</mn>
+                <mo>,</mo>
+                <mi>y</mi>
+                <mn>1</mn>
+                <mo>)</mo>
+            </math>
+            and
+            <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'>
+                <mo>(</mo>
+                <mi>x</mi>
+                <mn>2</mn>
+                <mo>,</mo>
+                <mi>y</mi>
+                <mn>2</mn>
+                <mo>)</mo>
+            </math>
+            select the formula to find the equation of the given line.
+        </p>
+    </div>
+    <div class="answerOptionsContainer">
+        <form name="ansForm" action="secondQuestion.html">
+        <div class="answerContainer">
+
+            <span class="optionAInput">
+            <input type="radio" name="options" value="A" >
+                <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'>
+                    <mi>y</mi>
+                    <mo>=</mo>
+                    <mi>m</mi>
+                    <mi>x</mi>
+                    <mo>+</mo>
+                    <mi>b</mi>
+                </math>
+            </span>
+            <input type="radio" name="options" value="B" class="optionBInput">
+                <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'>
+                    <msup>
+                        <mrow>
+                            <mo>(</mo>
+                            <mi>x</mi>
+                            <mo>-</mo>
+                            <mi>h</mi>
+                            <mo>)</mo>
+                        </mrow>
+                        <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <msup>
+                        <mrow>
+                            <mo>(</mo>
+                            <mi>y</mi>
+                            <mo>-</mo>
+                            <mi>k</mi>
+                            <mo>)</mo>
+                        </mrow>
+                        <mn>2</mn>
+                    </msup>
+                    <mo>=</mo>
+                    <msup>
+                        <mi>r</mi>
+                        <mn>2</mn>
+                    </msup>
+                </math>
+            <div class="answerOptionsSecondContainer">
+                <span class="optionAInput">
+                <input type="radio" name="options" value="C">
+                    <math xmlns='http://www.w3.org/1998/Math/MathML' display="inline">
+                        <mi>y</mi>
+                        <mo>-</mo>
+                        <msub>
+                            <mi>y</mi>
+                            <mn>1</mn>
+                        </msub>
+                        <mo>=</mo>
+                        <mi>m</mi>
+                        <mo>(</mo>
+                        <mi>x</mi>
+                        <mo>-</mo>
+                        <msub>
+                            <mi>x</mi>
+                            <mn>1</mn>
+                        </msub>
+                        <mo>)</mo>
+                    </math>
+                </span>
+                <input type="radio" name="options" value="D" class="optionDInput">
+                    <math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'>
+                        <mi>y</mi>
+                        <mo>-</mo>
+                        <msub>
+                            <mi>y</mi>
+                            <mn>2</mn>
+                        </msub>
+                        <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <msub>
+                                        <mi>y</mi>
+                                        <mn>2</mn>
+                                    </msub>
+                                    <mo>-</mo>
+                                    <msub>
+                                        <mi>y</mi>
+                                        <mn>1</mn>
+                                    </msub>
+                                </mrow>
+                                <mrow>
+                                    <msub>
+                                        <mi>x</mi>
+                                        <mn>2</mn>
+                                    </msub>
+                                    <mo>-</mo>
+                                    <msub>
+                                        <mi>x</mi>
+                                        <mn>1</mn>
+                                    </msub>
+                                </mrow>
+                            </mfrac>
+                        <mo>(</mo>
+                        <mi>x</mi>
+                        <mo>-</mo>
+                        <msub>
+                            <mi>x</mi>
+                            <mn>2</mn>
+                        </msub>
+                        <mo>)</mo>
+                    </math>
+            </div>
+            <input type="hidden" value=" " id="score" name="hiddenScore"/>
+
+        </div>
+        </form>
+        <div class="imgContainer">
+            <img src = "Images/Ques1.png" alt="Graph" style="width:204px;height:200px;">
+        </div>
+    </div> <!-- ans container -->
+    <div class="firstFooter">
+
+        <button class="myButton" type="submit" value="Submit" name="form-submit" onclick='checkAns()'>Submit & next Question</button>
+        <button class="myButton" type="reset" value="Reset" onclick="clearInput()">Cancel & Clear Selection</button>
+    </div>
+    <script>
+        var counter = 0;
+        function checkAns(){
+            // Get the selected option
+            var score = document.querySelector('input[name="options"]:checked').value;
+            alert(score + ' was selected!'); //TODO:Remove this!
+            if(score =='D') {
+               counter++;
+            }
+            document.getElementById('score').value = counter;
+            document.ansForm.submit();
+
+        }
+        function clearInput() {
+            var radioInputs = document.getElementsByName("options");
+            for(var i=0;i<radioInputs.length;i++)
+                radioInputs[i].checked = false;
+        }
+    </script>
+</div>
+</body>
+</html>

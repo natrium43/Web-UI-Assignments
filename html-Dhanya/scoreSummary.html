@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="CSS/thirdQuestion.css">
+</head>
+<body>
+<div class="innerBox">
+    <div class="innerBoxHeader">
+        <p class="headerText"><b>Score Card</b></p>
+    </div>
+    <div class="summarInnerBoxBody">
+        <div class="summaryBox">
+            <details>
+                <summary>Quantitative Section</summary>
+                <p>Number of Questions Answered: 2</p>
+                <p>Number of Correct Answers: <span id = "quantAns"></span> </p>
+                <p>Score:  <span id = "quantScore"></span></p>
+            </details>
+            <details>
+                <summary>English Section</summary>
+                <p>Number of Questions Answered: 1</p>
+                <p>Number of Correct Answers: <span id = "englAns"></span></p>
+                <p>Score:  <span id = "engScore"></span></p>
+            </details>
+            <details>
+                <summary>Audio/Video Section</summary>
+                <p>Number of Questions Answered: 1</p>
+                <p>Number of Correct Answers: <span id = "videoAns"></span></p>
+                <p>Score:  <span id = "videoScore"></span></p>
+             </details>
+        </div>
+        <h4>Thank You</h4>
+    </div>
+    <div class="innerBoxFooter">
+
+        <form name="wholeForm" action="scoreSummary.html">
+            <button class="secondPageButton" type="submit" value="Submit" name="form-submit">Finish</button>
+        </form>
+    </div>
+</div>
+<script>
+    var counter;
+    var engCounter;
+    var videoCounter = 0;
+    (function getScore() {
+
+        //previous score
+        counter = getURLParameter('hiddenScore');
+        engCounter = getURLParameter('hiddenEngScore');
+        videoCounter = getURLParameter('hiddenVideoScore');
+        document.getElementById('quantAns').innerHTML = counter;
+        document.getElementById('englAns').innerHTML = engCounter;
+        document.getElementById('videoAns').innerHTML = videoCounter;
+        document.getElementById('quantScore').innerHTML = counter*100;
+        document.getElementById('engScore').innerHTML = engCounter*100;
+        document.getElementById('videoScore').innerHTML = videoCounter*100;
+
+    })();
+    function getURLParameter(paramName) {
+        var urlString = window.location.search.substring(1);
+        var urlVarList =urlString.split('&');
+        for(var i=0;i< urlVarList.length; i++) {
+            var paramSet = urlVarList[i].split('=');
+            if(paramSet[0] ==paramName) {
+                return paramSet[1];
+            }
+        }
+    }
+</script>
+</body>
+</html>

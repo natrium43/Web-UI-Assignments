@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="CSS/thirdQuestion.css">
+</head>
+<body>
+<div class="innerBox">
+    <div class="innerBoxHeader">
+        <p class="headerText"><b>Question 3</b></p>
+    </div>
+
+    <div class="innerBoxBody">
+        <div class="questionBox">
+            <div class="leftBox">
+                <p> As per the latest the latest Twitter news, complete the article snippet
+                given by selecting appropriate choices for blanks.</p>
+            </div>
+            <div class="rightBox">
+                <p>Twitter wants more cash. The company announced two <mark onclick="toggleVisibility('A')">$_____</mark> million debt offerings
+                in filling today, each with a potential $100 increase provided that the sales
+                are oversubscribed.Assuming full tip including the $100 million boosters,<mark onclick="toggleVisibility('B')">________</mark>
+                will raise upto $1.5 billion with the two offerings. Source: <u>http://techcrunch.com/2014/09/10/twitter-to-raise-upto-1-5b-in-debt-offerring/</u></p>
+            </div>
+        </div>
+
+        <div class="OptionsBox">
+
+                    <div class="leftOptionsBox" id="leftOptionsBox" style="visibility: hidden">
+                        <form name="leftAnsForm" action="">
+                            <span class = "optionsSpan"><input type = "radio" name="leftOptions" value="A" />Option 1 Mark1 : $650</span>
+                            <span class = "optionsSpan"><input type = "radio" name="leftOptions" value="B" />Option 2 Mark1 : $550</span>
+                            <span class = "optionsSpan"><input type = "radio" name="leftOptions" value="C"/>Option 3 Mark1 : $650</span>
+                        </form>
+                    </div>
+                    <div class="rightOptionsBox" id="rightOptionsBox" style="visibility: hidden">
+                        <form name="rightAnsForm" action="">
+                            <span class = "optionsSpan2"><input type = "radio" name="rightOptions" value="D" />Option 1 Mark 2 : Twitter</span>
+                            <span class = "optionsSpan2"><input type = "radio" name="rightOptions" value="E" />Option 2 Mark 2 : Google</span>
+                            <span class = "optionsSpan2"><input type = "radio" name="rightOptions" value="F"/>Option 3 Mark 2 : Facebook</span>
+                        </form>
+                    </div>
+        </div>
+
+
+    </div>
+    <div class="innerBoxFooter">
+        <form name="wholeForm" action="fourthQuestion.html">
+            <button class="secondPageButton" type="submit" value="Submit" name="form-submit" onclick=' return checkAns()'>Submit & next Question</button>
+            <button class="secondPageButton" type="reset" value="Reset" onclick="clearInput()">Cancel & Clear Selection</button>
+            <input type="hidden" value=" " id="score" name="hiddenScore"/>
+            <input type="hidden" value=" " id="englishScore" name="hiddenEngScore">
+        </form>
+    </div>
+</div>
+<script>
+var counter;
+var score; //Check without this
+var engCounter = 0;
+function toggleVisibility(element) {
+if(element =='A') {
+    console.log("FirstSet");
+    var elemVisibleFirst = document.getElementById('leftOptionsBox');
+    elemVisibleFirst.style.visibility = 'visible';
+    var elemHiddenFirst = document.getElementById('rightOptionsBox');
+    elemHiddenFirst.style.visibility = 'hidden';
+}
+else
+{
+    console.log("SecondSet");
+    var elemVisible = document.getElementById('rightOptionsBox');
+    elemVisible.style.visibility = 'visible';
+    var elemHidden = document.getElementById('leftOptionsBox');
+    elemHidden.style.visibility = 'hidden';
+}
+}
+function checkAns() {
+    console.log(document.querySelector('input[name="leftOptions"]:checked').value);
+    console.log(document.querySelector('input[name="leftOptions"]:checked'));
+
+    firstAnswer = document.querySelector('input[name="leftOptions"]:checked').value;
+    secondAnswer =document.querySelector('input[name="rightOptions"]:checked').value;
+    counter = getURLParameter('hiddenScore');
+    if(firstAnswer=='A' && secondAnswer=='D') {
+        console.log("Both correct");
+        engCounter++;
+
+    }
+    document.getElementById('score').value = counter;
+    document.getElementById('englishScore').value = engCounter;
+    document.wholeForm.submit();
+    return false;
+}
+function getURLParameter(paramName) {
+    var urlString = window.location.search.substring(1);
+    var urlVarList =urlString.split('&');
+        for(var i=0;i< urlVarList.length; i++) {
+        var paramSet = urlVarList[i].split('=');
+        if(paramSet[0] ==paramName) {
+            return paramSet[1];
+        }
+    }
+}
+function clearInput() {
+    console.log(1);
+    var radioInputs = document.getElementsByName("leftOptions");
+        console.log(2);
+        for(var i=0;i<radioInputs.length;i++)
+            radioInputs[i].checked = false;
+
+
+    var radioInputsRight = document.getElementsByName("rightOptions");
+        console.log(3);
+        for(var i=0;i<radioInputsRight.length;i++)
+            radioInputsRight[i].checked = false;
+
+}
+</script>
+</body>
+</html>

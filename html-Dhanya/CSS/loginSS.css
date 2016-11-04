@@ -1,0 +1,65 @@
+label  {
+    display : inline-block;
+    width : 140px;
+    text-align: center;
+}
+
+input[type=text], input[type=password] {
+    width: 20%;
+    padding:20px;
+    margin:8px;
+    border:1px solid #ccc;
+
+}
+html {
+    height:100%;
+}
+body {
+    height:100%;
+}
+.loginContainer {
+    text-align:center;
+    margin: 24px 0 12px 0;
+}
+form {
+    display: block;
+    border: 4px solid #f1f1f1;
+    height:100%;
+}
+.imgContainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    margin-left: 100px;
+
+}
+button {
+    background-color: #239ae3;
+    color: white;
+    padding: 20px;
+    margin:10px;
+    cursor:pointer;
+    width:13%;
+    text-align: center;
+    margin-left: 150px;
+
+}
+#createAccountlink {
+    display:block;
+    margin-left: 150px;
+}
+.loginContainer {
+    height:100%;
+}
+.pageHeader{
+    padding: 2px 4px;
+    background-color: cornflowerblue;
+    color: white;
+    height:30px;
+    text-align:center;
+    margin-top: 40px;
+}
+.headerText {
+
+    color:white;
+    display:inline;
+}

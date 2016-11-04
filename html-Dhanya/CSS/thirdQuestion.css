@@ -1,0 +1,95 @@
+.innerBox {
+    border: 2px solid gray;
+    width:70%;
+    background-color: #fefefe;
+    text-align: center;
+    margin-left:213px;
+    margin-top:10%;
+    height:520px;
+
+}
+.innerBoxHeader {
+    padding: 2px 4px;
+    background-color: gray;
+    color: white;
+    height:15px;
+}
+.headerText {
+    margin-top: 0;
+    color:black;
+}
+.innerBoxBody {
+    height:450px;
+}
+.innerBoxFooter {
+    height:50px;
+}
+.questionBox {
+    display:flex;
+}
+.leftBox {
+
+    margin-top:10px;
+    width:210%;
+}
+.rightBox {
+    flex-grow: 1;
+    margin-top:10px;
+    float:left;
+}
+.OptionsBox {
+
+    display:flex;
+}
+.leftOptionsBox {
+    margin-top:5%;
+    width:25%;
+    margin-left: 2%;
+    /*text-align:left;*/
+}
+.rightOptionsBox {
+    margin-top:5%;
+    flex-grow: 1;
+
+
+}
+.optionsSpan {
+   display:block;
+}
+.optionsSpan2 {
+    display:block;
+   text-align: left;
+}
+.secondPageButton {
+    padding: 7px 10px;
+    cursor:pointer;
+}
+.centralOptionBox {
+    text-align: center;
+}
+.fourthOptionsBox {
+    margin-top:60px;
+}
+iframe {
+    margin-top:30px;
+}
+#areaSelect {
+    height:100px;
+}
+.summaryBox {
+    border: 2px solid gray;
+    width: 70%;
+    height:340px;
+    margin-top:40px;
+    margin-left:15%;
+    text-align:left;
+    overflow:scroll;
+}
+details {
+    margin-top:40px;
+    margin-left: 40px;
+}
+.summarInnerBoxBody
+{
+    height:400px;
+}

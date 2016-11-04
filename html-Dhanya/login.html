@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/loginSS.css">
+    <title>User Login</title>
+</head>
+<body>
+<div class="loginContainer" name="loginForm">
+    <div class="pageHeader">
+        <p class="headerText"><b>Login </b></p>
+    </div>
+    <form action="firstQuestion.html">
+        <div class="imgContainer">
+            <img src="Images/login-big-icon.png" alt="login Image" class="loginImg">
+        </div>
+        <div class="loginContainer">
+            <!--Login form -->
+            <div class="block">
+                <label><b>username</b></label>
+                <input type="text" id="userName"/>
+            </div>
+            <div class="block">
+                <label><b>password</b></label>
+                <input type="password" id="password" />
+            </div>
+            <button type="submit" onclick="return authorize()">Login</button>
+            <a href="#" id="createAccountlink">Create Account/Forgot Password?</a>
+        </div>
+    </form>
+</div>
+<script>
+    function authorize() {
+       var username =  document.getElementById('userName').value;
+        var pwd = document.getElementById('password').value;
+        if(username=='sjsu' && pwd=='sjsu') {
+            document.loginForm.submit();
+        }
+        else {
+            alert("Email-Password combination is wrong!");
+            return false;
+        }
+
+    }
+</script>
+</body>
+</html>
